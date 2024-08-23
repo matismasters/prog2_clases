@@ -54,22 +54,18 @@ Horas totales: (96)
 
 ### Clase 2: Repaso de programación I y conceptos fundamentales de framework .NET
 
-- Repaso de programación con pseudocódigo.
-- Repaso de funciones y procedimientos.
-- Repaso de estructuras de control.
-- Repaso de algoritmia básica.
-- Repaso de programación orientada a objetos.
+- Introducción a los conceptos fundamentales de .NET.
+- C#: Sintaxis básica y estructuras de control.
+- Definición de variables y tipos de datos.
+- Visibilidad de variables y métodos.
+- Instrucciones de control: if, else, switch
+- Instrucciones de ciclos: for, while, do-while
 - Introducción a los conceptos fundamentales de .NET.
 - Ejercicios prácticos de algoritmos en pseudocodigo de programación 1.
 
 ### Clase 3 y 4: Introducción a ASP.NET Core y Razor Pages
 
-- C#: Sintaxis básica y estructuras de control.
-- Definición de variables y tipos de datos.
-- Visibilidad de variables y métodos.
 - Conversión de tipos de datos.
-- Instrucciones de control: if, else, switch
-- Instrucciones de ciclos: for, while, do-while
 - Ejercicios prácticos en proyecto basico Razor Pages utilizando C#.
 - Un repartido de ejercicios por semana.
 

@@ -1,5 +1,3 @@
-<!-- .slide: data-transition="slide" -->
-
 # Programación 2
 ## ASP.NET Core with Razor Pages
 
