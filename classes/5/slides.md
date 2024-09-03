@@ -373,12 +373,116 @@ Puedes utilizar listas para almacenar y manipular datos en Razor Pages.
 
 ---
 
+## Ejercicio Práctico
+### Clase 4: Creación de Páginas y Navegación en Razor Pages
+
+---
+
+## Objetivos de la Clase
+
+- Aprender a crear una nueva página en Razor Pages.
+- Agregar un enlace de navegación para la nueva página.
+- Comprender cómo funcionan las vistas y los modelos de Razor Pages.
+
+---
+
+## Paso 1: Crear una Nueva Página Razor
+
+### Abrir el Proyecto en Visual Studio 2022
+
+- Abre tu proyecto de Razor Pages en Visual Studio.
+
+### Agregar una Nueva Página Razor
+
+1. Haz clic derecho en la carpeta `Pages` en el **Explorador de Soluciones**.
+2. Selecciona **Agregar** > **Nuevo Elemento...**.
+3. En el cuadro de diálogo **Agregar Nuevo Elemento**, selecciona **Página Razor**.
+4. Elige la plantilla **Página Razor** o **Página Razor con Entity Framework (CRUD)**.
+5. Escribe un nombre para tu nueva página, por ejemplo, `About`.
+6. Haz clic en **Agregar**.
+
+---
+
+## Editar la Nueva Página Razor
+
+### Contenido de `About.cshtml`
+
+```csharp
+@page
+@model RazorPagesIntro.Pages.AboutModel
+
+<h2>About Us</h2>
+<p>Welcome to the About page of our application.</p>
+```
+
+### Modificar el Modelo de Página (Opcional)
+
+- Si necesitas agregar lógica o manejo de datos, abre `About.cshtml.cs` y modifica el método `OnGet` o agrega métodos adicionales según sea necesario.
+
+---
+
+## Paso 2: Agregar un Enlace a la Nueva Página en la Navegación
+
+### Abrir el Archivo de Diseño Compartido
+
+- Los enlaces de navegación suelen estar ubicados en el archivo `_Layout.cshtml`, que se encuentra en la carpeta `Pages/Shared`.
+- Abre `Pages/Shared/_Layout.cshtml`.
+
+### Agregar un Enlace a la Nueva Página
+
+```html
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-page="/Index">MyApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/About">About</a> <!-- Enlace a la nueva página -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+```
+
+### Guardar los Cambios
+
+- Guarda el archivo `_Layout.cshtml` después de agregar el nuevo enlace.
+
+---
+
+## Paso 3: Probar los Cambios
+
+### Ejecutar la Aplicación
+
+- Presiona **F5** o haz clic en el botón **Ejecutar** en Visual Studio para iniciar tu aplicación.
+
+### Navegar a la Nueva Página
+
+- Una vez que la aplicación esté en ejecución, utiliza el menú de navegación para hacer clic en el enlace **About**.
+- Verifica que la nueva página se muestre correctamente.
+
+---
+
 ## Resumen de la Clase
 
 - Creación y manipulación de variables en Razor Pages.
 - Uso de estructuras de control (`if`, `else if`, `else`) para control de flujo.
 - Implementación de contadores y bucles (`for`, `while`) en Razor Pages.
 - Manejo de listas para almacenar y manipular datos dinámicos.
+- Aprendimos a crear una nueva página en Razor Pages.
+- Agregamos un enlace de navegación para la nueva página.
+- Discutimos cómo funcionan las vistas y los modelos en Razor Pages.
+
 
 ---
 
