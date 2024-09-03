@@ -31,7 +31,7 @@
 
 En C#, las variables deben declararse con un tipo específico.
 
-```
+```csharp
 int numero = 10;        // Entero
 double precio = 19.99;  // Decimal
 string nombre = "Juan"; // Cadena de texto
@@ -44,7 +44,7 @@ bool esActivo = true;   // Booleano
 
 - Declara una variable de cada tipo de dato mencionado y muestra sus valores usando `Console.WriteLine()`.
 
-```
+```csharp
 using System;
 
 class Program
@@ -72,7 +72,7 @@ class Program
 
 Utilizamos `if`, `else if` y `else` para el control de flujo.
 
-```
+```csharp
 int edad = 18;
 if (edad >= 18)
 {
@@ -98,7 +98,7 @@ else
 
 Se utiliza cuando se conoce el número de iteraciones.
 
-```
+```csharp
 for (int i = 0; i < 5; i++)
 {
     Console.WriteLine("Iteración " + i);
@@ -109,7 +109,7 @@ for (int i = 0; i < 5; i++)
 
 Se utiliza cuando el número de iteraciones no es conocido.
 
-```
+```csharp
 int contador = 0;
 while (contador < 5)
 {
@@ -132,7 +132,7 @@ while (contador < 5)
 
 ### Ejemplo: Leer y Mostrar el Nombre del Usuario
 
-```
+```csharp
 using System;
 
 class Program
@@ -162,7 +162,7 @@ class Program
 
 ### Ejemplo: Determinar Mayoría de Edad
 
-```
+```csharp
 using System;
 
 class Program
@@ -211,7 +211,7 @@ class Program
 
 ### Sintaxis Básica de una Función en C#
 
-```
+```csharp
 <tipo_retorno> NombreFuncion(<tipo_parametro> parametro1, <tipo_parametro> parametro2)
 {
     // Cuerpo de la función
@@ -221,7 +221,7 @@ class Program
 
 ### Ejemplo: Función Suma
 
-```
+```csharp
 using System;
 
 class Program
@@ -254,7 +254,7 @@ class Program
 
 - **C#**: Las funciones deben estar declaradas dentro de una clase. Utilizan un tipo de retorno explícito y pueden tener parámetros con tipos explícitos.
 
-```
+```csharp
 static int Multiplicar(int x, int y)
 {
     return x * y;
@@ -263,7 +263,7 @@ static int Multiplicar(int x, int y)
 
 - **JavaScript**: Las funciones son más flexibles; no requieren estar dentro de una clase y no utilizan un tipo de retorno explícito. Los parámetros no tienen un tipo explícito.
 
-```
+```csharp
 function multiplicar(x, y) {
     return x * y;
 }
@@ -283,7 +283,7 @@ function multiplicar(x, y) {
 
 - Permite crear múltiples funciones con el mismo nombre pero diferentes parámetros.
 
-```
+```csharp
 using System;
 
 class Program
@@ -318,7 +318,7 @@ class Program
 1. Crea una función que calcule el área de un rectángulo y otra para el área de un círculo.
 2. Añade sobrecarga para manejar diferentes tipos de datos.
 
-```
+```csharp
 static double CalcularArea(double radio)
 {
     return Math.PI * radio * radio;
@@ -333,6 +333,170 @@ static double CalcularArea(double largo, double ancho)
 ### Ejercicio de Comparación
 
 - Escribe las mismas funciones en JavaScript y discute las diferencias en tipado y sintaxis.
+
+---
+
+## Arrays
+
+Un array es una colección de elementos del mismo tipo, y su tamaño se define cuando se crea.
+
+---
+
+### Declaración e Inicialización
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Declarar e inicializar un array de enteros
+        int[] numeros = new int[5]; // Un array de 5 enteros
+
+        // Asignar valores a cada elemento del array
+        numeros[0] = 1;
+        numeros[1] = 2;
+        numeros[2] = 3;
+        numeros[3] = 4;
+        numeros[4] = 5;
+
+        // Mostrar los elementos del array
+        foreach (int numero in numeros)
+        {
+            Console.WriteLine(numero);
+        }
+
+        // Declarar e inicializar un array con valores
+        string[] frutas = { "Manzana", "Banana", "Cereza" };
+
+        // Mostrar los elementos del array
+        foreach (string fruta in frutas)
+        {
+            Console.WriteLine(fruta);
+        }
+    }
+}
+```
+
+---
+
+## Agregar Elementos a una Lista
+
+Para agregar elementos a una lista en C#, puedes usar el método `Add()` para añadir un elemento al final de la lista o `Insert()` para añadir un elemento en una posición específica.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Crear una lista de enteros
+        List<int> numeros = new List<int>();
+
+        // Agregar elementos al final de la lista
+        numeros.Add(1);
+        numeros.Add(2);
+        numeros.Add(3);
+
+        // Agregar un elemento en una posición específica
+        numeros.Insert(1, 4); // Inserta 4 en el índice 1
+
+        // Mostrar los elementos de la lista
+        Console.WriteLine("Elementos en la lista:");
+        foreach (int numero in numeros)
+        {
+            Console.WriteLine(numero);
+        }
+    }
+}
+```
+
+---
+
+## Eliminar Elementos de una Lista
+
+Para eliminar elementos de una lista, puedes usar el método `Remove()` para eliminar la primera ocurrencia de un valor específico o `RemoveAt()` para eliminar un elemento en un índice específico.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Crear e inicializar una lista de enteros
+        List<int> numeros = new List<int> { 1, 2, 3, 4, 5 };
+
+        // Eliminar la primera ocurrencia del valor 3
+        numeros.Remove(3);
+
+        // Eliminar el elemento en el índice 1
+        numeros.RemoveAt(1);
+
+        // Mostrar los elementos restantes
+        Console.WriteLine("Elementos después de eliminar:");
+        foreach (int numero in numeros)
+        {
+            Console.WriteLine(numero);
+        }
+    }
+}
+```
+
+---
+
+## Buscar un Elemento en una Lista
+
+Para buscar un elemento en una lista, puedes usar el método `Contains()` para verificar si un elemento está en la lista o `IndexOf()` para obtener el índice de la primera ocurrencia de un elemento específico.
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Crear e inicializar una lista de cadenas
+        List<string> frutas = new List<string> { "Manzana", "Banana", "Cereza" };
+
+        // Verificar si la lista contiene el elemento "Banana"
+        bool contieneBanana = frutas.Contains("Banana");
+        Console.WriteLine($"¿La lista contiene 'Banana'? {contieneBanana}");
+
+        // Obtener el índice del elemento "Cereza"
+        int indiceCereza = frutas.IndexOf("Cereza");
+        if (indiceCereza >= 0)
+        {
+            Console.WriteLine($"Índice de 'Cereza': {indiceCereza}");
+        }
+        else
+        {
+            Console.WriteLine("'Cereza' no se encuentra en la lista.");
+        }
+    }
+}
+```
+
+---
+
+## Resumen
+
+- **Agregar Elementos**:
+  - `Add()`: Agrega un elemento al final de la lista.
+  - `Insert()`: Agrega un elemento en una posición específica.
+
+- **Eliminar Elementos**:
+  - `Remove()`: Elimina la primera ocurrencia de un valor específico.
+  - `RemoveAt()`: Elimina un elemento en un índice específico.
+
+- **Buscar Elementos**:
+  - `Contains()`: Verifica si un elemento está en la lista.
+  - `IndexOf()`: Obtiene el índice de la primera ocurrencia de un elemento específico.
 
 ---
 
