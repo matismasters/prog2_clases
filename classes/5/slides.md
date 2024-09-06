@@ -168,7 +168,7 @@
 
 ---
 
-## Notación `@*...*@`
+## Notación `@helper`
 
 ### ¿Qué es `@helper`?
 
