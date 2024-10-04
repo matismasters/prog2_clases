@@ -1,157 +1,85 @@
-# Primer Parcial: Clases 1 a 3
+# Hotel Refugio del Sol
+## Obligatorio 1. Prog 2. Matutino 2024.
 
-## Instrucciones:
-- Selecciona la opción correcta para cada pregunta.
-- Marca solo una respuesta por pregunta.
+### Introducción
 
-## Preguntas:
+El objetivo de este obligatorio es desarrollar una aplicación de consola para la gestión de un hotel ficticio llamado Refugio del Sol. Este proyecto permitirá practicar los principios de la programación orientada a objetos (POO) en C#, aplicando conceptos como encapsulamiento, y patrones básicos de diseño si son necesarios.
 
-1. **¿Cuál de los siguientes principios NO pertenece al modelo CIA de seguridad informática?**
-   - a) Confidencialidad
-   - b) Integridad
-   - c) Disponibilidad
-   - d) Autenticación
+### Refugio del Sol: 
 
-2. **¿Qué es una vulnerabilidad en el contexto de la seguridad informática?**
-   - a) Un tipo de malware
-   - b) Una debilidad en el sistema que puede ser explotada por amenazas
-   - c) Un método de autenticación
-   - d) Un tipo de firewall
+El Hotel Refugio del Sol cuenta con 15 apartamentos al norte del complejo y 15 al sur. De ellos, 10 tienen 4 dormitorios, y 20 tienen 3 dormitorios, distribuídos equitativamente entre norte y sur. 
 
-3. **¿Cuál de los siguientes NO es un tipo de ataque de ingeniería social?**
-   - a) Phishing
-   - b) Pretexting
-   - c) Spear phishing
-   - d) SQL Injection
+El centro de convenciones y esparcimiento es de acceso libre para todos los huéspedes.
 
-4. **¿Qué es la criptografía?**
-   - a) El proceso de autenticar a un usuario
-   - b) La técnica de proteger información mediante el cifrado y descifrado
-   - c) Un tipo de firewall
-   - d) Un tipo de ataque cibernético
+Los apartamentos de 4 dormitorios tienen 240 m2 totales, y los de 3 tienen 180 m2 totales. 
 
-5. **¿Cuál de los siguientes métodos se utiliza para evaluar riesgos?**
-   - a) Análisis de impacto de negocio (BIA)
-   - b) Análisis FODA
-   - c) Cifrado asimétrico
-   - d) Autenticación multifactor (MFA)
+El parque Este es de acceso libre a todos los huéspedes y se pueden llevar mascotas.
 
-6. **¿Cuál de las siguientes opciones es una característica del malware?**
-   - a) Protege la integridad de los datos
-   - b) Es un software diseñado para dañar o interrumpir sistemas
-   - c) Mejora la disponibilidad del sistema
-   - d) Aumenta la seguridad de la red
+Los 10 apartamentos del lado Oeste que tienen acceso preferencial a la piscina tienen un 20% de sobrecosto. 
 
-7. **¿Cuál de las siguientes herramientas se utiliza comúnmente en pruebas de penetración?**
-   - a) Metasploit
-   - b) Firewall
-   - c) Antivirus
-   - d) IDS/IPS
+No se permite a los huéspedes traer consigo más de 5 valijas por persona.
 
-8. **¿Qué es el análisis cualitativo de riesgos?**
-   - a) Evaluar riesgos en términos de números y estadísticas
-   - b) Evaluar riesgos basándose en la probabilidad y el impacto subjetivo
-   - c) Identificar y corregir errores de programación
-   - d) Implementar un firewall en la red
+El precio base es de 250 USD por noche.
 
-9. **¿Qué tipo de ataque es un DDoS?**
-   - a) Un ataque que cifra datos para pedir un rescate
-   - b) Un ataque que interrumpe el servicio al sobrecargar el sistema
-   - c) Un ataque de phishing dirigido
-   - d) Un tipo de virus
+El acceso al parque es por helicóptero o submarino.
 
-10. **¿Cuál es el propósito de la autenticación en seguridad informática?**
-    - a) Proteger la integridad de los datos
-    - b) Verificar la identidad de los usuarios
-    - c) Asegurar la disponibilidad del sistema
-    - d) Cifrar la información durante la transmisión
+### 1. Datos utilizados por el hotel:
 
-11. **¿Qué es un ataque de phishing?**
-    - a) Un ataque que utiliza ingeniería social para obtener información confidencial
-    - b) Un ataque que interrumpe el servicio de una red
-    - c) Un tipo de malware que se replica a sí mismo
-    - d) Una técnica de cifrado
+- La aplicación debe manejar la siguiente información:
+- Huéspedes: Gestión de datos de los huéspedes.
+- Apartamentos: Información de los apartamentos disponibles del hotel.
+- Reservas: Registro y gestión de reservas de los huéspedes.
 
-12. **¿Qué significa la integridad en el contexto de la seguridad informática?**
-    - a) Asegurar que la información es accesible solo por personas autorizadas
-    - b) Asegurar que la información no ha sido alterada de manera no autorizada
-    - c) Asegurar que los servicios y datos están disponibles cuando se necesitan
-    - d) Asegurar la autenticación de usuarios
+### Funcionalidad requerida:
 
-13. **¿Qué es una amenaza en términos de seguridad informática?**
-    - a) Una debilidad en el sistema
-    - b) Un posible evento que puede causar daño a un sistema
-    - c) Un método para proteger datos
-    - d) Un software de protección
+La aplicación debe ofrecer las siguientes funcionalidades:
+- Reservas y cancelaciones: Permitir a los funcionarios realizar y cancelar reservas para los huéspedes.
+- Estadísticas: Mostrar distintas estadísticas relacionadas con las reservas y el uso del hotel.
 
-14. **¿Cuál de los siguientes es un ejemplo de un control de seguridad?**
-    - a) Un análisis de riesgo
-    - b) Un firewall
-    - c) Un ataque de phishing
-    - d) Una vulnerabilidad
+### Estadísticas solicitadas:
 
-15. **¿Cuál es el propósito del cifrado de datos?**
-    - a) Hacer los datos ilegibles para cualquier persona que no tenga la clave de descifrado
-    - b) Verificar la identidad de los usuarios
-    - c) Proteger contra ataques de ingeniería social
-    - d) Asegurar la disponibilidad del sistema
+- Implementar las siguientes funcionalidades:
+- Listar huéspedes ordenados alfabéticamente.
+- Listar los apartamentos disponibles.
+- Reservas del día: Listar los huéspedes que han reservado para una fecha específica.
+- Reservas del huésped: Mostrar las reservas realizadas por un huésped específico.
+- Apartamentos con más reservas: Mostrar los 10 apartamentos más reservados.
 
-16. **¿Qué es la autorización en seguridad informática?**
-    - a) Verificar la identidad de un usuario
-    - b) Determinar los permisos y privilegios de un usuario
-    - c) Cifrar datos para protegerlos
-    - d) Detectar y prevenir intrusos en la red
+### Restricciones:
 
-17. **¿Qué se entiende por disponibilidad en el modelo CIA?**
-    - a) La información está disponible solo para usuarios autorizados
-    - b) La información está disponible cuando sea necesaria
-    - c) La información no ha sido alterada de manera no autorizada
-    - d) La información está protegida por cifrado
+- Duración de las reservas: Las reservas no pueden exceder los 30 días.
+- Disponibilidad: No se puede reservar una habitación ya reservada dentro de esas fechas.
 
-18. **¿Cuál de los siguientes NO es una técnica de autenticación?**
-    - a) Contraseña
-    - b) Token de seguridad
-    - c) Firewall
-    - d) Biometría
+### Ingeniería del Software:
 
-19. **¿Qué es un análisis de impacto de negocio (BIA)?**
-    - a) Un método para detectar malware
-    - b) Un proceso para evaluar el impacto de interrupciones en los servicios de una organización
-    - c) Una técnica de cifrado
-    - d) Un tipo de firewall
+- La solución debe estar estructurada aplicando principios de ingeniería de software:
+- POO y UML: Aplicar los principios de la programación orientada a objetos y utilizar UML para representar el diseño.
+- Capas: El proyecto debe estar separado en dos capas: Capa de Presentación (interfaz de consola) y Capa de Dominio (lógica del negocio).
+- Principios POO: Aplicar herencia, encapsulamiento, y polimorfismo si es necesario.
+- Patrones de diseño: Implementar Modelos Vistas y Controladoras
 
-20. **¿Cuál es una característica de un análisis FODA?**
-    - a) Evaluar fortalezas, oportunidades, debilidades y amenazas
-    - b) Cifrar datos para protegerlos
-    - c) Configurar firewalls
-    - d) Detectar intrusos en la red
+### Documentación requerida:
 
-21. **¿Qué se entiende por ingeniería social en el contexto de la seguridad informática?**
-    - a) La ciencia de diseñar y construir sistemas seguros
-    - b) El uso de manipulaciones psicológicas para obtener información confidencial
-    - c) La implementación de firewalls y sistemas de detección de intrusos
-    - d) El análisis de riesgos en sistemas informáticos
+- El proyecto debe entregarse acompañado de la siguiente documentación:
+- Carátula y tabla de contenido.
+- Declaración de autoría.
+- Abstract del proyecto.
+- Cronograma de trabajo.
+- Diccionario de clases utilizadas en la solución.
+- Pseudocódigo de los algoritmos clave.
+- Diagrama de la capa de dominio.
+- Diagrama de las dos capas (iconado).
+- Manual de usuario.
+- Resultados de las pruebas realizadas (testing).
 
-22. **¿Cuál de las siguientes es una técnica de prevención de phishing?**
-    - a) Usar software antivirus
-    - b) Configurar un firewall
-    - c) Implementar autenticación multifactor
-    - d) Realizar análisis de impacto de negocio
+### Entregas:
+- Control 1: 15/10/2024 Diagrama de Capas completo, aprobado por el docente.
+- Control 2: 25/10/2024 ABM (Altas, Bajas y Modificaciones) de Apartamentos y Huéspedes.
+- Entrega final: 08/11/2024 Proyecto completo, funcional y documentado.
+- Juego de datos de prueba: Deberá crearse una clase que cargue datos de prueba al comenzar la aplicación.
+- Medio de entrega: Repositorio de Github público con el código del proyecto y los archivos de la documentación. No se aceptarán modificaciones luego de la fecha de entrega.
 
-23. **¿Qué es el cifrado asimétrico?**
-    - a) Un método de cifrado que utiliza la misma clave para cifrar y descifrar datos
-    - b) Un método de cifrado que utiliza dos claves diferentes: una para cifrar y otra para descifrar
-    - c) Un tipo de malware que cifra datos
-    - d) Un proceso para verificar la identidad de los usuarios
+### Contacto:
 
-24. **¿Cuál es el propósito de un sistema de detección de intrusos (IDS)?**
-    - a) Proteger contra malware
-    - b) Detectar y alertar sobre actividades sospechosas en la red
-    - c) Cifrar datos durante la transmisión
-    - d) Verificar la identidad de los usuarios
-
-25. **¿Qué es un ataque de fuerza bruta?**
-    - a) Un ataque que intenta todas las combinaciones posibles de contraseñas para acceder a un sistema
-    - b) Un ataque que interrumpe el servicio al sobrecargar el sistema
-    - c) Un ataque que utiliza ingeniería social para obtener información confidencial
-    - d) Un tipo de malware que se replica a sí mismo
+Profesor: Matías Verges
+Consultas: Whatsapp o mverges@ctc.edu.uy
