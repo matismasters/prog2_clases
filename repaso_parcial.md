@@ -355,6 +355,10 @@ class LanzadorDeDados {
         }
         return resultados;
     }
+
+    public void AgregarDado(Dado dado) {
+        Dados.Add(dado);
+    }
 }
 ```
 
