@@ -13,7 +13,7 @@ La aplicación debe ofrecer las siguientes funcionalidades:
 ### Etapa 1
 
 - **Registro de pilotos**: Permitir registrar nuevos pilotos con su nombre, apellido, y país de origen.
-- **Registro de escuderías**: Permitir registrar nuevas escuderías con su nombre y país de origen.
+- **Registro de escuderías**: Permitir registrar nuevas escuderías con su nombre y pais donde se encuentra su sede.
 - **Asignar pilotos a escuderías**: Permitir asignar pilotos a escuderías.
 
 ### Etapa 2
