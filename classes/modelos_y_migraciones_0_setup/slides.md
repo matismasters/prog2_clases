@@ -33,10 +33,24 @@
 ## Configuración del Proyecto MVC
 
 1. Nombra el proyecto y elige la ubicación de guardado.
-2. Selecciona **.NET 6.0** o **.NET 7.0** como Framework.
+2. Selecciona **.NET 8.0** como Framework.
 3. Asegúrate de que **Enable Docker** y **Enable OpenAPI Support** estén desmarcados.
 4. Marca **Configure for HTTPS** para habilitar HTTPS.
 5. Haz clic en **Crear** para generar el proyecto.
+
+---
+
+## **Instalar Entity Framework Core**:
+
+1. Abre **Package Manager Console** en Visual Studio:
+   - Ve a **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**.
+
+2. Ejecuta los siguientes comandos para instalar Entity Framework Core:
+
+   ```bash
+   Install-Package Microsoft.EntityFrameworkCore.SqlServer
+   Install-Package Microsoft.EntityFrameworkCore.Tools
+   ```
 
 ---
 
