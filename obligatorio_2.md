@@ -15,7 +15,7 @@ En esta competencia de Fórmula 1:
 - **Escuderías**: De las escuderías sabemos su Nombre, Sponsor Oficial, País de Origen, y pilotos. No puede haber más de dos pilotos por escudería.
 - **Pilotos**: De los pilotos sabemos su Nombre, Fecha de Nacimiento, País de Origen y Escudería a la que pertenecen. No puede haber mas de 20 pilotos.
 - **Carreras**: De las carreras sabemos el Nombre, la Ciudad en la que está ubicada la pista, la Fecha, en que posición comienza cada piloto, y en que posición terminó cada piloto. Todas las carreras tienen exactamente 20 pilotos.
-- **Puntaje**: Los puntos se otorgan en cada carrera de acuerdo a la posición del piloto, en un sistema predefinido:
+- **Puntaje**: Los puntos se calculan para cada carrera de acuerdo a la posición del piloto:
 
   - 1° lugar: 25 puntos
   - 2° lugar: 18 puntos
@@ -42,10 +42,10 @@ La aplicación debe ofrecer las siguientes funcionalidades:
 
 Implementar las siguientes estadísticas:
 
-- **[Requerida] Tabla de posiciones**: Mostrar la lista de pilotos ordenados por puntos acumulados en todas las carreras.
+- **[Requerida] Tabla de posiciones de pilotos**: Mostrar la lista de pilotos ordenados por puntos acumulados en todas las carreras.
 - **[Opcional] Historial de carreras de un piloto**: Mostrar la posición y puntaje de un piloto específico en todas las carreras en las que ha participado.
-- **[Requerida] Puntos por escudería**: Calcular el total de puntos acumulados por cada escudería sumando los puntos de ambos pilotos.
-- **[Opcional] Historial de carreras de una escuedería**: Mostrar la posición y puntaje de cada piloto de una escudería específica en todas las carreras en las que han participado.
+- **[Requerida] Tabla de posiciones de escuderías**: Mostrar la lista de escuderías con el total de puntos sumando los puntos de ambos pilotos.
+- **[Opcional] Historial de carreras de una escudería**: Mostrar la posición y puntaje de cada piloto de una escudería específica en todas las carreras en las que han participado.
 - **[Opcional] Carreras ganadas**: Mostrar los pilotos con mayor cantidad de primeros lugares en las carreras.
 
 ### Restricciones
@@ -82,7 +82,7 @@ El proyecto debe entregarse acompañado de la siguiente documentación:
 - **Control 1**: 15/11/2024 Diagrama de Dominio con modelos, sus atributos y relaciones.
 - **Control 2**: 22/11/2024 ABM (Altas, Bajas y Modificaciones) de Pilotos y Escuderías.
 - **Control 3**: 29/11/2024 ABM (Altas, Bajas y Modificaciones) de Carreras.
-- **Entrega final**: 06/12/2024 Proyecto completo, funcional y documentado.
+- **Entrega final**: 05/12/2024 Proyecto completo, funcional y documentado.
 - **Juego de datos de prueba**: Deberá crearse una clase que cargue datos de prueba al comenzar la aplicación.
 - **Medio de entrega**: Repositorio de Github público con el código del proyecto y los archivos de la documentación. No se aceptarán modificaciones luego de la fecha de entrega.
 
