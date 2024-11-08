@@ -180,6 +180,11 @@
    Add-Migration InitialCreate
    ```
 
+3. Crear la base de datos con el mismo nombre que en el string de conexion:
+   a. Abre **SQL Server Management Studio (SSMS)**.
+   b. Conéctate a tu instancia de SQL Server (por ejemplo, `localhost\SQLEXPRESS`).
+   c. Click derecho en **Databases** y **Create Database**, luego ingresa el mismo nombre que en el string de conexion.(MiBaseDeDatos)
+
 3. Luego, ejecuta el comando para aplicar la migración a la base de datos:
 
    ```bash
