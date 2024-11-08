@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="/dist/reset.css" />
+    <link rel="stylesheet" href="/dist/reveal.css" />
+    <link rel="stylesheet" href="/dist/theme/dracula.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="./slides.md"
+          data-separator="^\n---\n"
+          data-separator-vertical="^\n----\n"
+          data-separator-notes="^Note:"
+        ></section>
+      </div>
+    </div>
+
+    <script src="/dist/reveal.js"></script>
+    <script src="/plugin/notes/notes.js"></script>
+    <script src="/plugin/markdown/markdown.js"></script>
+    <script src="/plugin/highlight/highlight.js"></script>
+    <style>
+      .reveal .slides {
+        text-align: left !important;
+      }
+
+      .reveal pre {
+        margin: 0 !important;
+      }
+    </style>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+
+      function SplitTitlesAndContent() {
+        return {
+          id: 'splitTitlesAndContent',
+          init: (deck) => {
+            deck.addEventListener('slidechanged', function (event) {
+              if (event.currentSlide.dataset.splitMade) {
+                return;
+              }
+
+              const titleDiv = document.createElement('div');
+              titleDiv.classList.add('titles-container')
+              const titles = event.currentSlide.querySelectorAll('h1, h2, h3, h4, h5, h6');
+              titles.forEach((title) => {
+                titleDiv.appendChild(title);
+              });
+
+              const contentDiv = document.createElement('div');
+              contentDiv.classList.add('contents-container')
+              const contents = event.currentSlide.querySelectorAll('p, ul, ol, pre, img, blockquote, table, iframe, figure, div, span');
+              contents.forEach((content) => {
+                contentDiv.appendChild(content);
+              });
+
+              event.currentSlide.innerHTML = '';
+              event.currentSlide.appendChild(titleDiv);
+              event.currentSlide.appendChild(contentDiv);
+              event.currentSlide.dataset.splitMade = 'true';
+            })
+          },
+        }
+      }
+
+      Reveal.initialize({
+        hash: true,
+        height: 1220,
+        width: 1920,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]// , SplitTitlesAndContent
+      });
+    </script> 
+  </body>
+</html>

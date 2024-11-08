@@ -40,6 +40,20 @@
 
 ---
 
+## **Instalar Entity Framework Core**:
+
+1. Abre **Package Manager Console** en Visual Studio:
+   - Ve a **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**.
+
+2. Ejecuta los siguientes comandos para instalar Entity Framework Core:
+
+   ```bash
+   Install-Package Microsoft.EntityFrameworkCore.SqlServer
+   Install-Package Microsoft.EntityFrameworkCore.Tools
+   ```
+
+---
+
 ## Paso 3: Crear el `DbContext` y el Modelo de Datos
 
 ### Crear la Carpeta `Data`
