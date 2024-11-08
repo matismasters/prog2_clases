@@ -153,7 +153,7 @@
    ```json
    {
      "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=MiBaseDeDatos;Trusted_Connection=True;"
+       "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=MiBaseDeDatos;Trusted_Connection=True;TrustServerCertificate=True;"
      },
      "Logging": {
        "LogLevel": {
