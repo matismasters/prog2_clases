@@ -35,7 +35,7 @@
 1. Nombra el proyecto y elige la ubicación de guardado.
 2. Selecciona **.NET 8.0** como Framework.
 3. Asegúrate de que **Enable Docker** y **Enable OpenAPI Support** estén desmarcados.
-4. Marca **Configure for HTTPS** para habilitar HTTPS.
+4. Desmarca **Configure for HTTPS** para habilitar HTTPS.
 5. Haz clic en **Crear** para generar el proyecto.
 
 ---
@@ -67,7 +67,7 @@
 2. Selecciona **Agregar > Clase…** y nómbrala `AppDbContext`.
 3. Define `AppDbContext` usando el código siguiente:
 
-   ~~~csharp
+   ```csharp
    using Microsoft.EntityFrameworkCore;
    using TuProyecto.Models;  // Asegúrate de cambiar "TuProyecto" por el nombre de tu proyecto
 
@@ -81,7 +81,7 @@
            public DbSet<Producto> Productos { get; set; }
        }
    }
-   ~~~
+   ```
 
 ---
 
@@ -92,7 +92,7 @@
 3. Selecciona **Agregar > Clase…** y nombra la clase como `Producto`.
 4. Define el modelo `Producto`:
 
-   ~~~csharp
+   ```csharp
    namespace TuProyecto.Models  // Cambia "TuProyecto" por el nombre de tu proyecto
    {
        public class Producto
@@ -102,7 +102,7 @@
            public decimal Precio { get; set; }
        }
    }
-   ~~~
+   ```
 
 ---
 
@@ -111,7 +111,7 @@
 1. Abre `Program.cs`.
 2. Agrega el `DbContext` para que use SQL Server con el connection string de `appsettings.json`.
 
-   ~~~csharp
+   ```csharp
    using Microsoft.EntityFrameworkCore;
    using TuProyecto.Data;  // Cambia "TuProyecto" por el nombre de tu proyecto
 
@@ -141,7 +141,7 @@
        pattern: "{controller=Home}/{action=Index}/{id?}");
 
    app.Run();
-   ~~~
+   ```
 
 ---
 
@@ -150,10 +150,10 @@
 1. Abre `appsettings.json`.
 2. Agrega el connection string de tu base de datos en la sección `ConnectionStrings`:
 
-   ~~~json
+   ```json
    {
      "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=MiBaseDeDatos;Trusted_Connection=True;"
+       "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=MiBaseDeDatos;Trusted_Connection=True;TrustServerCertificate=True;"
      },
      "Logging": {
        "LogLevel": {
@@ -163,7 +163,7 @@
      },
      "AllowedHosts": "*"
    }
-   ~~~
+   ```
 
    - Cambia `Server=localhost\\SQLEXPRESS` al nombre de tu servidor e instancia si es necesario.
    - Cambia `MiBaseDeDatos` al nombre de la base de datos que deseas usar o crear.
@@ -176,15 +176,15 @@
    - Ve a **Herramientas > Administrador de paquetes NuGet > Consola del Administrador de paquetes**.
 2. Ejecuta el comando para crear una migración inicial:
 
-   ~~~bash
+   ```bash
    Add-Migration InitialCreate
-   ~~~
+   ```
 
 3. Luego, ejecuta el comando para aplicar la migración a la base de datos:
 
-   ~~~bash
+   ```bash
    Update-Database
-   ~~~
+   ```
 
 ---
 
