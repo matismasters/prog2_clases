@@ -64,10 +64,11 @@ public class AppDbContext : DbContext {
 - En **ASP.NET Core**, se debe configurar el `DbContext` en `Startup.cs` o `Program.cs`.
 
 ```csharp
-public void ConfigureServices(IServiceCollection services) {
-    services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-}
+
+   // Configura el DbContext con SQL Server
+   builder.Services.AddDbContext<AppDbContext>(options =>
+       options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 ```
 
 - Define la cadena de conexión en `appsettings.json`.
@@ -79,7 +80,7 @@ public void ConfigureServices(IServiceCollection services) {
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=MiBaseDeDatos;Trusted_Connection=True;"
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=MiBaseDeDatos;Trusted_Connection=True;TrustServerCertificate=True"
   }
 }
 ```
