@@ -4,13 +4,13 @@
 
 ### Introducción
 
-El objetivo de este obligatorio es desarrollar una aplicación web **MVC en C#** para la gestión de una granja, enfocándose en **Agricultores** y **Maquinaria** agrícola. El proyecto permitirá a los estudiantes aplicar principios de **Programación Orientada a Objetos (POO)** en un entorno **MVC** y aprender a utilizar **Entity Framework** para gestionar la base de datos.
+El objetivo de este obligatorio es desarrollar una aplicación web **MVC en C#** para la gestión de una cooperativa agropecuaria, enfocándose en **Agricultores** que se prestan la **Maquinaria** agrícola. El proyecto permitirá a los estudiantes aplicar principios de **Programación Orientada a Objetos (POO)** en un entorno **MVC** y aprender a utilizar **Entity Framework** para gestionar la base de datos.
 
 La aplicación se centrará en la administración de **Agricultores**, **Maquinaria**, y en el registro de la utilización de la maquinaria por parte de los agricultores, lo cual permitirá generar estadísticas basadas en el uso y rendimiento.
 
 ### Contexto del Proyecto
 
-En esta granja:
+En esta cooperativa:
 
 - **Agricultores**: Son las personas responsables del uso y mantenimiento de la maquinaria. De cada agricultor se conoce su nombre, y el tamaño del campo en hectareas.
 
