@@ -40,7 +40,7 @@
   - Accesibles desde cualquier parte del código.
   - Ejemplo:
 
-    ```csharp
+    ~~~csharp
     public class Persona
     {
         public string Nombre { get; set; }
@@ -49,13 +49,13 @@
             Console.WriteLine($"Hola, soy {Nombre}");
         }
     }
-    ```
+    ~~~
 
 - **Privados (`private`)**:
   - Solo accesibles dentro de la clase donde se definen.
   - Ejemplo:
 
-    ```csharp
+    ~~~csharp
     public class CuentaBancaria
     {
         private decimal saldo;
@@ -65,13 +65,13 @@
             saldo += cantidad;
         }
     }
-    ```
+    ~~~
 
 - **Estáticos (`static`)**:
   - Pertenecen a la clase, no a una instancia.
   - Ejemplo:
 
-    ```csharp
+    ~~~csharp
     public class Calculadora
     {
         public static int Sumar(int a, int b)
@@ -79,7 +79,7 @@
             return a + b;
         }
     }
-    ```
+    ~~~
 
 ---
 
@@ -95,17 +95,17 @@
 
 - **Agregar una migración**:
 
-  ```bash
+  ~~~bash
   Add-Migration NombreDeLaMigracion
-  ```
+  ~~~
 
   - Registra cambios en el modelo y crea un archivo de migración.
 
 - **Actualizar la base de datos**:
 
-  ```bash
+  ~~~bash
   Update-Database
-  ```
+  ~~~
 
   - Aplica las migraciones pendientes a la base de datos.
 
@@ -116,7 +116,7 @@
 1. **Modificar el Modelo**:
    - Agregamos una nueva propiedad a la clase `Producto`.
 
-     ```csharp
+     ~~~csharp
      public class Producto
      {
          public int Id { get; set; }
@@ -125,19 +125,19 @@
          public int Stock { get; set; }
          public string Descripcion { get; set; } // Nueva propiedad
      }
-     ```
+     ~~~
 
 2. **Crear una Nueva Migración**:
 
-   ```bash
+   ~~~bash
    Add-Migration AgregarDescripcionAProducto
-   ```
+   ~~~
 
 3. **Aplicar la Migración a la Base de Datos**:
 
-   ```bash
+   ~~~bash
    Update-Database
-   ```
+   ~~~
 
 - La base de datos ahora incluye la nueva columna `Descripcion` en la tabla `Productos`.
 
@@ -153,18 +153,18 @@
 
 - **Clase `Persona`**:
 
-  ```csharp
+  ~~~csharp
   public class Persona
   {
       public int Id { get; set; }
       public string Nombre { get; set; }
       public DocumentoIdentidad DocumentoIdentidad { get; set; }
   }
-  ```
+  ~~~
 
 - **Clase `DocumentoIdentidad`**:
 
-  ```csharp
+  ~~~csharp
   public class DocumentoIdentidad
   {
       public int Id { get; set; }
@@ -172,18 +172,18 @@
       public int PersonaId { get; set; }
       public Persona Persona { get; set; }
   }
-  ```
+  ~~~
 
 ### Configuración en `ModelBuilder`
 
 - En el método `OnModelCreating`:
 
-  ```csharp
+  ~~~csharp
   modelBuilder.Entity<Persona>()
       .HasOne(p => p.DocumentoIdentidad)
       .WithOne(d => d.Persona)
       .HasForeignKey<DocumentoIdentidad>(d => d.PersonaId);
-  ```
+  ~~~
 
 ---
 
@@ -195,18 +195,18 @@
 
 - **Clase `Categoria`**:
 
-  ```csharp
+  ~~~csharp
   public class Categoria
   {
       public int Id { get; set; }
       public string Nombre { get; set; }
       public List<Producto> Productos { get; set; }
   }
-  ```
+  ~~~
 
 - **Clase `Producto`**:
 
-  ```csharp
+  ~~~csharp
   public class Producto
   {
       public int Id { get; set; }
@@ -214,18 +214,18 @@
       public int CategoriaId { get; set; }
       public Categoria Categoria { get; set; }
   }
-  ```
+  ~~~
 
 ### Configuración en `ModelBuilder`
 
 - En el método `OnModelCreating`:
 
-  ```csharp
+  ~~~csharp
   modelBuilder.Entity<Producto>()
       .HasOne(p => p.Categoria)
       .WithMany(c => c.Productos)
       .HasForeignKey(p => p.CategoriaId);
-  ```
+  ~~~
 
 ---
 
@@ -237,7 +237,7 @@
 
 - **Ejemplo de Controlador**:
 
-  ```csharp
+  ~~~csharp
   public class ProductosController : Controller
   {
       public IActionResult Index()
@@ -252,7 +252,7 @@
           return View();
       }
   }
-  ```
+  ~~~
 
 - **Tipos de `IActionResult` Comunes**:
   - `View()`: Retorna una vista.
@@ -268,7 +268,7 @@
 
 - **Ejemplo**:
 
-  ```csharp
+  ~~~csharp
   [HttpPost]
   public IActionResult Crear(Producto producto)
   {
@@ -279,17 +279,17 @@
       }
       return View(producto);
   }
-  ```
+  ~~~
 
 - **Desde la Vista**:
 
-  ```html
+  ~~~html
   <form asp-action="Crear" method="post">
       <input asp-for="Nombre" />
       <input asp-for="Precio" />
       <button type="submit">Guardar</button>
   </form>
-  ```
+  ~~~
 
 ---
 
@@ -305,19 +305,19 @@
 
 - **Ejemplo en el Controlador**:
 
-  ```csharp
+  ~~~csharp
   public IActionResult Index()
   {
       ViewBag.Mensaje = "Bienvenido a la tienda";
       return View();
   }
-  ```
+  ~~~
 
 - **Uso en la Vista**:
 
-  ```html
+  ~~~html
   <h1>@ViewBag.Mensaje</h1>
-  ```
+  ~~~
 
 ### ViewData
 
@@ -325,19 +325,19 @@
 
 - **Ejemplo en el Controlador**:
 
-  ```csharp
+  ~~~csharp
   public IActionResult Index()
   {
       ViewData["Mensaje"] = "Bienvenido a la tienda";
       return View();
   }
-  ```
+  ~~~
 
 - **Uso en la Vista**:
 
-  ```html
+  ~~~html
   <h1>@ViewData["Mensaje"]</h1>
-  ```
+  ~~~
 
 ---
 
@@ -347,7 +347,7 @@
 
 - **Ejemplo**:
 
-  ```html
+  ~~~html
   @if (Model.Productos.Count > 0)
   {
       <p>Hay productos disponibles.</p>
@@ -356,31 +356,31 @@
   {
       <p>No hay productos disponibles.</p>
   }
-  ```
+  ~~~
 
 ### Uso de `@foreach`
 
 - **Ejemplo**:
 
-  ```html
+  ~~~html
   <ul>
       @foreach (var producto in Model.Productos)
       {
           <li>@producto.Nombre - @producto.Precio</li>
       }
   </ul>
-  ```
+  ~~~
 
 ### Bloque de Código `@{ }`
 
 - **Ejemplo**:
 
-  ```html
+  ~~~html
   @{
       var fechaActual = DateTime.Now;
   }
   <p>Fecha actual: @fechaActual</p>
-  ```
+  ~~~
 
 ---
 
@@ -439,41 +439,41 @@
 
 - **GET con Parámetros en URL**:
 
-```
+~~~
   GET https://api.com/productos/1
-```
+~~~
 
 ---
 
 - **GET con Parámetros en Query String**:
 
-```
+~~~
   GET https://api.com/productos?id=1&nombre=julian
-```
+~~~
 
 ---
 
 - **POST con Parámetros en el Cuerpo**:
 
-```
+~~~
   POST https://api.com/productos
   {
     "nombre": "Laptop",
     "precio": 1000
   }
-```
+~~~
 
 ---
 
 - **PUT con Parámetros en el Cuerpo**:
 
-```
+~~~
   PUT https://api.com/productos/1
   {
     "nombre": "Laptop",
     "precio": 1200
   }
-```
+~~~
 
 ---
 
